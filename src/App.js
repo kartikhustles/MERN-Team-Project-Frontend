@@ -1,11 +1,14 @@
 import './App.css';
+import DashBoard from './Components/DashBoard/DashBoard';
+import Footer from './Components/Footer/Footer';
+import Navbar from './Components/Navbar/Navbar';
 
 function App() {
   return (
     <div className="App">
-      <h1 className="text-3xl font-bold underline">
-      Tailwind works
-    </h1>
+      <Navbar/>
+      <DashBoard/>
+      <Footer/>
     </div>
   );
 }
