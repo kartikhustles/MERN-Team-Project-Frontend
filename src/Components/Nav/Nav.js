@@ -20,7 +20,19 @@ function Nav() {
             About
           </Link>
           <Link
-            to="/menu"
+            to="/login"
+            className="block py-2 pl-3 pr-4 font-semibold text-xl rounded md:bg-transparent"
+          >
+            Login
+          </Link>
+          <Link
+            to="/reserve"
+            className="block py-2 pl-3 pr-4 font-semibold text-xl rounded md:bg-transparent"
+          >
+            Restaurants
+          </Link>
+          <Link
+            to="/contact"
             className="block py-2 pl-3 pr-4 font-semibold text-xl rounded md:bg-transparent"
           >
             Contact
