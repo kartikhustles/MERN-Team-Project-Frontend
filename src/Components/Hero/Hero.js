@@ -1,4 +1,5 @@
 import "../../index.css";
+import { Link } from "react-router-dom";
 
 function Hero() {
   return (
@@ -36,7 +37,12 @@ function Hero() {
             <option>10:00 PM</option>
           </select>
           <button className="text-xl reservebtn rounded-lg font-semibold px-5 py-2 m-2">
+          <Link
+            to="/reserve"
+            className="block py-2 pl-3 pr-4 font-semibold text-xl rounded md:bg-transparent"
+          >
             Reserve Table
+          </Link>
           </button>
         </div>
       </div>
