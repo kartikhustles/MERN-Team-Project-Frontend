@@ -18,24 +18,7 @@ function Hero() {
             Don’t wait in a line to enjoy your meal. Reserve a table in advance
             with us.
           </p>
-          <p className="text-xl font-semibold px-5 py-2">Date</p>
-          <p className="text-xl font-semibold px-5 py-2">Time</p>
-          <select className="text-xl font-semibold px-3 py-2 bg-transparent text-slate-100">
-            <option>Availibility</option>
-            <option>12:00 PM</option>
-            <option>12:30 PM</option>
-            <option>01:00 PM</option>
-            <option>01:30 PM</option>
-            <option>02:00 PM</option>
-            <option>02:30 PM</option>
-            <option>07:00 PM</option>
-            <option>07:30 PM</option>
-            <option>08:00 PM</option>
-            <option>08:30 PM</option>
-            <option>09:00 PM</option>
-            <option>09:30 PM</option>
-            <option>10:00 PM</option>
-          </select>
+          
           <button className="text-xl reservebtn rounded-lg font-semibold px-5 py-2 m-2">
           <Link
             to="/reserve"
