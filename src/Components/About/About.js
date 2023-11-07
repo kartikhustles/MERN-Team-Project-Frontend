@@ -2,7 +2,7 @@ function About() {
   return (
     <div className="w-full hero flex relative">
       <img
-        className=" h-full w-full object-cover z-[-1]"
+        className=" h-full w-full object-cover z-[-1] fixed top-0"
         src="https://images.unsplash.com/photo-1449038319053-cc4a78b12733?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fGRpbmV8ZW58MHx8MHx8fDA%3D"
         alt=""
       />
