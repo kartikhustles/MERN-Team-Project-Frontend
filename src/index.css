@@ -8,6 +8,7 @@
 
 .hero {
   height: 45rem;
+  
 }
 
 .hero img {
@@ -18,8 +19,18 @@
   filter: brightness(0.5);
 }
 
+@font-face {
+  font-family: 'Dancing';
+  src: url('../../MERN-Team-Project/src/Fonts/DancingScript-VariableFont_wght.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Garet-Book';
+  src: url('../../MERN-Team-Project/src/Fonts/Garet-Book.ttf') format('truetype');
+}
+
+
 .heromid {
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -34,6 +45,13 @@
 }
 
 .reservebtn {
-  border: 1px solid rgba(255, 255, 255, 0.615);
-  width: 20rem;
+  border: 1px solid #fff; 
+  padding: 2px 80px; 
 }
+
+
+
+
+
+
+
