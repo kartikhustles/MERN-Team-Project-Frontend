@@ -1,4 +1,3 @@
-import "../../index.css";
 import { Link } from "react-router-dom";
 
 function Hero() {
@@ -6,7 +5,7 @@ function Hero() {
     <>
       <div className="w-full hero flex relative">
         <img
-          className=" h-full w-full object-cover z-[-1]"
+          className="h-full w-full object-cover z-[-1]"
           src="https://images.unsplash.com/photo-1543007631-283050bb3e8c?auto=format&fit=crop&q=80&w=3174&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt=""
         />
@@ -18,14 +17,14 @@ function Hero() {
             Don’t wait in a line to enjoy your meal. Reserve a table in advance
             with us.
           </p>
-          
-          <button className="text-xl reservebtn rounded-lg font-semibold px-5 py-2 m-2">
-          <Link
-            to="/reserve"
-            className="block py-2 pl-3 pr-4 font-semibold text-xl rounded md:bg-transparent"
-          >
-            Reserve Table
-          </Link>
+
+          <button className="mx-auto text-xl reservebtn rounded-lg font-semibold px-5 py-2 m-2">
+            <Link
+              to="/reserve"
+              className="block py-2 pl-3 pr-4 font-semibold text-xl rounded md:bg-transparent"
+            >
+              Reserve Table
+            </Link>
           </button>
         </div>
       </div>
