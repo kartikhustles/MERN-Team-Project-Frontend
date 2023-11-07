@@ -7,6 +7,7 @@ import Footer from './Components/Footer/Footer';
 import Hero from './Components/Hero/Hero';
 import Reserve from './Components/Reserve/Reserve';
 import Login from './Components/Login/Login';
+import Booking from './Components/Booking/Booking';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/contact" element={<Contact/>} />
         <Route path="/reserve" element={<Reserve/>} />
         <Route path="/login" element={<Login/>} />
+        <Route path="/booking" element={<Booking/>} />
       </Routes>
       <Footer/>
     </HashRouter>
