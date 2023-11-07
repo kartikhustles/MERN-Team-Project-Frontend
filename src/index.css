@@ -47,11 +47,23 @@
 .reservebtn {
   border: 1px solid #fff; 
   padding: 2px 80px; 
+  transition: background-color 0.3s ease-in-out; 
+}
+
+.reservebtn:hover {
+  background-color: #ffcb43;
+background-image: linear-gradient(319deg, #ffcb43 0%, #ff6425 37%, #ff0016 100%);
+  color: #fff; 
+  transform: scale(1.05);
 }
 
 
 
 
+.hero {
+  min-height: 50rem; 
+  
+}
 
 
 

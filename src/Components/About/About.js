@@ -1,15 +1,30 @@
 function About() {
+  const customFontStyle = {
+    fontFamily: 'Dancing, sans-serif',
+    fontSize: '4rem',
+    marginBottom: '2rem',
+    marginTop:'0rem',
+  };
+  const customFontStyle2 = {
+    fontFamily: 'Garet-Book, sans-serif',  
+    fontSize: '1rem',
+  };
+
+
+
   return (
     <div className="w-full hero flex relative">
       <img
-        className=" h-full w-full object-cover z-[-1] fixed top-0"
+        className="h-full w-full object-cover z-[-1] fixed top-0"
         src="https://images.unsplash.com/photo-1449038319053-cc4a78b12733?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fGRpbmV8ZW58MHx8MHx8fDA%3D"
         alt=""
       />
       <div className="absolute z-1 text-white m-8">
-        <p className=" text-lg font-bold">
-          <span className=" text-4xl font-extrabold">Welcome to Dine</span>,
-          your go-to destination for a seamless dining experience! Whether
+        <h1 className="text-4xl font-extrabold text-center" style={customFontStyle}>
+          Welcome to Dine
+        </h1>
+        <p className="text-lg font-bold" style={customFontStyle2}>
+          Your go-to destination for a seamless dining experience! Whether
           you're a food enthusiast looking to explore new culinary horizons or
           simply planning a special night out, we've got you covered. At Dine,
           we bring the best of the restaurant world to your fingertips.
@@ -19,13 +34,13 @@ function About() {
         </p>
         <p className=" text-lg font-bold my-4">
           <span className="text-4xl font-extrabold ">Key Features</span>
-          <ol>
+          <ol >
             <li className="my-2">
-              <span className="text-2xl font-bold">
+              <span className="text-2xl font-bold"  >
                 Extensive Restaurant Selection
               </span>
               :- Browse through a diverse range of restaurants, from cozy local
-              gems to upscale dining establishments.
+              gems to upscale dining establishments. 
             </li>
             <li className="my-2">
               <span className=" text-2xl font-bold">
