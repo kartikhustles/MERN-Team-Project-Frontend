@@ -60,3 +60,11 @@
 .hero {
   min-height: 50rem;
 }
+
+.reservenowbtn:hover{
+
+  border-color: aqua;
+  color: aqua;
+  transform: scale(1.05);
+  transition: all 0.2s ease-in-out;
+}
