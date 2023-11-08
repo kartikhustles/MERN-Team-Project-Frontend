@@ -24,7 +24,7 @@ function Reserve() {
     
       <div className="text-slate-100 grid grid-cols-3 py-10 font-bold">
       {data.map((item,i)=>{
-          return <Item key={i} id={item.id} name={item.name} image={item.image} description={item.description} rating={item.rating} location={item.location}/>
+          return <Item key={i} id={item.id} name={item.name} image={item.image} description={item.description} rating={item.rating} location={item.location} price={item.price}/>
       })}
       </div>
     </div>
