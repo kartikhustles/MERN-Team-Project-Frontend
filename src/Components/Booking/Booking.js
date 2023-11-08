@@ -2,7 +2,7 @@
 function Booking()
 {
     return (
-        <h1>HEEHE</h1>
+        <h1>Book Your Table!</h1>
     )
 }
 export default Booking;
