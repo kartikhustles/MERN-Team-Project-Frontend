@@ -1,4 +1,36 @@
+import { useState } from "react";
+import { toast } from "react-toastify";
+
 function Login() {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  function ChangeHandler(event) {
+    setFormData((prevFormData) => {
+      return {
+        ...prevFormData,
+        [event.target.name]: event.target.value,
+      };
+    });
+  }
+
+  function submitHandler(event) {
+    event.preventDefault();
+    console.log("printing the form values");
+    console.log(formData);
+    toast.success("Logged-in Successfully!", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+  }
   return (
     <div className="flex flex-col hero items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0 ">
       <img
@@ -11,7 +43,7 @@ function Login() {
           <h1 className="text-xl font-bold leading-tight tracking-tight  md:text-2x text-white">
             Create an account
           </h1>
-          <div className="space-y-4 md:space-y-6">
+          <form className="space-y-4 md:space-y-6" onSubmit={submitHandler}>
             <div>
               <label
                 for="email"
@@ -23,9 +55,11 @@ function Login() {
                 type="email"
                 name="email"
                 id="email"
+                value={formData.email}
                 className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="name@mail.com"
-                required=""
+                required
+                onChange={ChangeHandler}
               />
             </div>
 
@@ -41,8 +75,10 @@ function Login() {
                 name="password"
                 id="password"
                 placeholder="••••••••"
+                value={formData.password}
                 className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                required=""
+                required
+                onChange={ChangeHandler}
               />
             </div>
 
@@ -53,7 +89,7 @@ function Login() {
                   aria-describedby="terms"
                   type="checkbox"
                   className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-primary-600 dark:ring-offset-gray-800"
-                  required=""
+                  required
                 />
               </div>
               <div className="ml-3 text-sm">
@@ -74,7 +110,7 @@ function Login() {
             {/* <p class="text-sm font-light text-gray-500 dark:text-gray-400">
                       Already have an account? <a href="#" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Login here</a>
                   </p> */}
-          </div>
+          </form>
         </div>
       </div>
     </div>

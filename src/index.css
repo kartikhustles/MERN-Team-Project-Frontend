@@ -8,7 +8,6 @@
 
 .hero {
   height: 45rem;
-  
 }
 
 .hero img {
@@ -20,14 +19,15 @@
 }
 
 @font-face {
-  font-family: 'Dancing';
-  src: url('../../MERN-Team-Project/src/Fonts/DancingScript-VariableFont_wght.ttf') format('truetype');
+  font-family: "Dancing";
+  src: url("../../MERN-Team-Project/src/Fonts/DancingScript-VariableFont_wght.ttf")
+    format("truetype");
 }
 @font-face {
-  font-family: 'Garet-Book';
-  src: url('../../MERN-Team-Project/src/Fonts/Garet-Book.ttf') format('truetype');
+  font-family: "Garet-Book";
+  src: url("../../MERN-Team-Project/src/Fonts/Garet-Book.ttf")
+    format("truetype");
 }
-
 
 .heromid {
   top: 40%;
@@ -45,25 +45,18 @@
 }
 
 .reservebtn {
-  border: 1px solid #fff; 
-  padding: 2px 80px; 
-  transition: background-color 0.3s ease-in-out; 
+  border: 1px solid #fff;
+  padding: 2px 80px;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .reservebtn:hover {
-  background-color: #ffcb43;
-background-image: linear-gradient(319deg, #ffcb43 0%, #ff6425 37%, #ff0016 100%);
-  color: #fff; 
+  border-color: aqua;
+  color: aqua;
   transform: scale(1.05);
+  transition: all 0.2s ease-in-out;
 }
-
-
-
 
 .hero {
-  min-height: 50rem; 
-  
+  min-height: 50rem;
 }
-
-
-

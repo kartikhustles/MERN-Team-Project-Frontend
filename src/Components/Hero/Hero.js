@@ -2,14 +2,13 @@ import { Link } from "react-router-dom";
 
 function Hero() {
   const customFontStyle = {
-    fontFamily: 'Dancing, sans-serif', 
-    fontSize: '4rem',
+    fontFamily: "Dancing, sans-serif",
+    fontSize: "4rem",
   };
   const customFontStyle2 = {
-    fontFamily: 'Garet-Book, sans-serif',  
-    fontSize: '1.5rem',
+    fontFamily: "Garet-Book, sans-serif",
+    fontSize: "1.5rem",
   };
-
 
   return (
     <>
@@ -20,18 +19,25 @@ function Hero() {
           alt=""
         />
         <div className="flex glassmorphism heromid absolute z-1 w-[50%] flex-col rounded-xl align-center text-slate-100">
-        <h3 className="text-5xl font-bold pt-5 text-center" style={{ ...customFontStyle, lineHeight: '1.5' }}>
-  Let us Serve you better
-</h3>
+          <h3
+            className="text-5xl font-bold pt-5 text-center"
+            style={{ ...customFontStyle, lineHeight: "1.5" }}
+          >
+            Let us Serve you better
+          </h3>
 
-            <p className="text-lg font-semibold py-2 text-center" style={{ ...customFontStyle2, lineHeight: '1.5' }}>
+          <p
+            className="text-lg font-semibold py-2 text-center"
+            style={{ ...customFontStyle2, lineHeight: "1.5" }}
+          >
             Skip the line and reserve a table with us.
           </p>
 
           <button className="mx-auto text-xl reservebtn rounded-lg font-semibold px-5 py-2 m-2">
             <Link
               to="/reserve"
-              className="block py-2 pl-3 pr-4 font-semibold text-xl rounded md:bg-transparent" style={{ ...customFontStyle2, lineHeight: '1.5' }}
+              className="block py-2 pl-3 pr-4 font-semibold text-xl rounded md:bg-transparent"
+              style={{ ...customFontStyle2, lineHeight: "1.5" }}
             >
               Reserve Table
             </Link>
