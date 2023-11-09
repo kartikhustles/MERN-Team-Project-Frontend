@@ -1,13 +1,15 @@
 import React from 'react'
 
-// import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 
 const Item = (props) => {
     return (
         <>
             <div className="w-5/6 rounded overflow-hidden shadow-lg glassmorphism my-8 cursor-pointer">
-                <img className="h-[200px] w-[2001px]" src={props.image} alt="Sunset in the mountains" />
+                <Link
+                    to='/booking'
+                ><img className="h-[200px] w-[2001px]" src={props.image} alt="Sunset in the mountains" /></Link>
                 <div className="px-6 py-4">
                     <div className='flex justify-between'>
                     <div className="font-thin text-xl mb-2 text-slate-100">{props.name}</div>
