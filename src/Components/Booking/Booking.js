@@ -36,7 +36,7 @@ function Booking() {
               onChange={handleDateChange}
               dateFormat="dd/MM/yyyy"
               locale="en-US"
-              className="bg-gray-700 p-2 rounded-2xl text-white custom-datepicker"
+              className="bg-gray-700 py-2 px-24 rounded-2xl text-white custom-datepicker"
               />
 
             </div>
@@ -47,7 +47,7 @@ function Booking() {
               >
                 Select Time:
               </label>
-              <select className="bg-gray-700 p-2 rounded-2xl text-white">
+              <select className="bg-gray-700 py-2 px-36 rounded-2xl text-white">
                 <option>12:00 PM</option>
                 <option>12:30 PM</option>
                 <option>01:00 PM</option>
@@ -68,7 +68,7 @@ function Booking() {
               </label>
               <input
                 type="number"
-                className="bg-gray-700 p-2 rounded-2xl text-white"
+                className="bg-gray-700 py-2 px-24 rounded-2xl text-white"
                 min="1"
               />
             </div>
