@@ -35,7 +35,7 @@ function Hero() {
 
           <button className="mx-auto text-xl reservebtn rounded-lg font-semibold px-5 py-2 m-2">
             <Link
-              to="/reserve"
+              to="/login"
               className="block py-2 pl-3 pr-4 font-semibold text-xl rounded md:bg-transparent"
               style={{ ...customFontStyle2, lineHeight: "1.5" }}
             >
