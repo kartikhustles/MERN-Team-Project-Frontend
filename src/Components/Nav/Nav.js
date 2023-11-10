@@ -32,10 +32,10 @@ function Nav() {
             About
           </Link>
           <Link
-            to="/login"
+            to="/Signup"
             className="block py-2 px-3 font-semibold text-md rounded bg-transparent md:bg-transparent"
           >
-            Login
+            Signup
           </Link>
           <Link
             to="/reserve"

@@ -6,8 +6,9 @@ import Nav from './Components/Nav/Nav';
 import Footer from './Components/Footer/Footer';
 import Hero from './Components/Hero/Hero';
 import Reserve from './Components/Reserve/Reserve';
-import Login from './Components/Login/Login';
+// import Login from './Components/Login/Login';
 import Booking from './Components/Booking/Booking';
+import Signup from './Components/Signup/Signup';
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
         <Route path="/about" element={<About/>} />
         <Route path="/contact" element={<Contact/>} />
         <Route path="/reserve" element={<Reserve/>} />
-        <Route path="/login" element={<Login/>} />
+        <Route path="/signup" element={<Signup/>} />
         <Route path="/booking" element={<Booking/>} />
       </Routes>
       <Footer/>
