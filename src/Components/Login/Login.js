@@ -1,36 +1,42 @@
 import { useState } from "react";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 
-function Login() {
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-  });
+function Login(props) {
+  const [email,setEmail]=useState("");
+  const [password,setPasswword] = useState("");
 
-  function ChangeHandler(event) {
-    setFormData((prevFormData) => {
-      return {
-        ...prevFormData,
-        [event.target.name]: event.target.value,
-      };
-    });
-  }
+  const arr = [email,password];
+  
 
-  function submitHandler(event) {
-    event.preventDefault();
-    console.log("printing the form values");
-    console.log(formData);
-    toast.success("Logged-in Successfully!", {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-    });
-  }
+  // const [formData, setFormData] = useState({
+  //   email: "",
+  //   password: "",
+  // });
+
+  // function ChangeHandler(event) {
+  //   setFormData((prevFormData) => {
+  //     return {
+  //       ...prevFormData,
+  //       [event.target.name]: event.target.value,
+  //     };
+  //   });
+  // }
+
+  // function submitHandler(event) {
+  //   event.preventDefault();
+  //   console.log("printing the form values");
+  //   console.log(formData);
+  //   toast.success("Logged-in Successfully!", {
+  //     position: "top-right",
+  //     autoClose: 5000,
+  //     hideProgressBar: false,
+  //     closeOnClick: true,
+  //     pauseOnHover: true,
+  //     draggable: true,
+  //     progress: undefined,
+  //     theme: "dark",
+  //   });
+  // }
   return (
     <div className="flex flex-col hero items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0 ">
       <img
@@ -43,7 +49,10 @@ function Login() {
           <h1 className="text-xl font-bold leading-tight tracking-tight  md:text-2x text-white">
             Create an account
           </h1>
-          <form className="space-y-4 md:space-y-6" onSubmit={submitHandler}>
+          <form className="space-y-4 md:space-y-6" 
+          
+          // onSubmit={submitHandler}
+          >
             <div>
               <label
                 for="email"
@@ -52,14 +61,15 @@ function Login() {
                 Your email
               </label>
               <input
+                onChange={(event)=>setEmail(event.target.value)}
                 type="email"
                 name="email"
                 id="email"
-                value={formData.email}
+                // value={formData.email}
                 className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="name@mail.com"
                 required
-                onChange={ChangeHandler}
+                // onChange={ChangeHandler}
               />
             </div>
 
@@ -71,14 +81,15 @@ function Login() {
                 Password
               </label>
               <input
+              onChange={(event)=>setPasswword(event.target.value)}
                 type="password"
                 name="password"
                 id="password"
                 placeholder="••••••••"
-                value={formData.password}
+                // value={formData.password}
                 className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 required
-                onChange={ChangeHandler}
+                // onChange={ChangeHandler}
               />
             </div>
 
