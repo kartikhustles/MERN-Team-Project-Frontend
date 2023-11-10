@@ -29,7 +29,7 @@ function Signup()
 
     return (
         <form onSubmit={handleSubmit}>
-        <Login getState={getState}/>
+        <Login getState={getState} emailValue="" passwordValue=""/>
         </form>
     )
 }
