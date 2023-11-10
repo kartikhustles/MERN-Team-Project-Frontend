@@ -65,6 +65,7 @@ function Login(props) {
                 Your email
               </label>
               <input
+                defaultValue={props.emailValue}
                 onChange={(event)=>setEmail(event.target.value)}
                 type="email"
                 name="email"
@@ -85,6 +86,7 @@ function Login(props) {
                 Password
               </label>
               <input
+              defaultValue={props.passwordValue}
               onChange={(event)=>setPasswword(event.target.value)}
                 type="password"
                 name="password"
