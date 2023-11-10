@@ -6,6 +6,10 @@ function Login(props) {
   const [password,setPasswword] = useState("");
 
   const arr = [email,password];
+
+  const handleClick = () =>{
+    props.getState(arr);
+  }
   
 
   // const [formData, setFormData] = useState({
@@ -93,7 +97,7 @@ function Login(props) {
               />
             </div>
 
-            <div className="flex items-start">
+            {/* <div className="flex items-start">
               <div className="flex items-center h-5">
                 <input
                   id="terms"
@@ -111,14 +115,17 @@ function Login(props) {
                   I accept the Terms and Conditions
                 </label>
               </div>
-            </div>
+            </div> */}
+
+
             <button
+            onClick={handleClick}
               type="submit"
               className="w-full text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
             >
               Create an account
             </button>
-            {/* <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+            {/* <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                       Already have an account? <a href="#" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Login here</a>
                   </p> */}
           </form>
