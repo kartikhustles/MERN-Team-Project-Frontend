@@ -1,29 +1,52 @@
+import React, { useState, useEffect } from 'react';
+import { useSpring, animated } from 'react-spring';
+
 function About() {
-  const customFontStyle = {
-    fontFamily: 'Dancing, sans-serif',
-    fontSize: '4rem',
-    marginBottom: '2rem',
-    marginTop:'0rem',
-  };
-  const customFontStyle2 = {
-    fontFamily: 'Garet-Book, sans-serif',  
-    fontSize: '1rem',
-  };
+  const [isVisible, setIsVisible] = useState(false);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      setIsVisible(scrollY > 100);
+    };
 
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const fadeProps = useSpring({
+    opacity: isVisible ? 1 : 0,
+    transform: isVisible ? 'translateY(0%)' : 'translateY(50%)',
+    from: { opacity: 0, transform: 'translateY(50%)' },
+  });
+
+  const teamMembersProps = useSpring({
+    opacity: isVisible ? 1 : 0,
+    from: { opacity: 0 },
+    delay: 500,
+  });
+
+  const photosProps = useSpring({
+    opacity: isVisible ? 1 : 0,
+    from: { opacity: 0 },
+    delay: 1000,
+  });
 
   return (
-    <div className="w-full hero flex relative">
+    <div className="hero flex items-center justify-center min-h-screen">
       <img
         className="h-full w-full object-cover z-[-1] fixed top-0"
         src="https://images.unsplash.com/photo-1449038319053-cc4a78b12733?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fGRpbmV8ZW58MHx8MHx8fDA%3D"
         alt=""
       />
-      <div className="absolute z-1 text-white m-8">
-        <h1 className="text-4xl font-extrabold text-center" style={customFontStyle}>
+      <div className="absolute z-1 text-white m+20 heromid text-center">
+        <h1 className="text-4xl font-extrabold text-center mb-8 mt-56">
           Welcome to Dine
         </h1>
-        <p className="text-lg font-bold" style={customFontStyle2}>
+
+        <p className="text-lg font-bold mb-8">
           Your go-to destination for a seamless dining experience! Whether
           you're a food enthusiast looking to explore new culinary horizons or
           simply planning a special night out, we've got you covered. At Dine,
@@ -32,68 +55,31 @@ function About() {
           with just a few clicks. Our user-friendly platform makes it effortless
           to find and book tables at top-rated restaurants in your area.
         </p>
-        <p className=" text-lg font-bold my-4">
-          <span className="text-4xl font-extrabold ">Key Features</span>
-          <ol >
-            <li className="my-2">
-              <span className="text-2xl font-bold"  >
-                Extensive Restaurant Selection
-              </span>
-              :- Browse through a diverse range of restaurants, from cozy local
-              gems to upscale dining establishments. 
-            </li>
-            <li className="my-2">
-              <span className=" text-2xl font-bold">
-                Personalized Recommendations
-              </span>
-              :- Receive tailored suggestions based on your location,
-              preferences, and dining history.
-            </li>
-            <li className="my-2">
-              <span className=" text-2xl font-bold">Easy Booking</span>
-              :- Secure your spot with ease by choosing your preferred date,
-              time, and party size. Make instant reservations and receive
-              confirmation right away.
-            </li>
-            <li className="my-2">
-              <span className=" text-2xl font-bold">Explore Menus</span>
-              :- Peek into each restaurant's offerings with detailed menus,
-              including descriptions, prices, and dietary information.
-            </li>
-            <li className="my-2">
-              <span className=" text-2xl font-bold">User Reviews</span>
-              :- Gain insights from fellow diners through honest and informative
-              reviews and ratings.
-            </li>
-            <li className="my-2">
-              <span className=" text-2xl font-bold">Exclusive Promotions</span>
-              :- Keep an eye out for special deals, promotions, and loyalty
-              rewards to make your dining experience even more delightful.
-            </li>
-            <li className="my-2">
-              <span className=" text-2xl font-bold">User Accounts</span>
-              :- Create your account for a personalized experience, including
-              booking history and user profiles.
-            </li>
-            <li className="my-2">
-              <span className=" text-2xl font-bold">Secure Payments</span>
-              :- Enjoy peace of mind with our secure payment system for online
-              reservations.
-            </li>
-            <li className="my-2">
-              <span className=" text-2xl font-bold">Mobile-Friendly</span>
-              :- Access our platform on-the-go with our mobile-responsive
-              design. Dine is more than just a restaurant reservation platform;
-              it's your passport to unforgettable dining experiences. Whether
-              you're planning a romantic dinner for two, a family celebration,
-              or a casual outing with friends, we're here to help you savor
-              every moment. Discover and create memories with Dine. Your next
-              culinary adventure awaits!
-            </li>
-          </ol>
-        </p>
+
+        <animated.h2 style={fadeProps} className="text-4xl font-extrabold mb-4 mt-8">
+          History
+        </animated.h2>
+        <animated.p style={fadeProps} className="text-lg font-bold mb-8">
+          Dine was founded in 2023 with a vision to revolutionize the way people experience dining...
+        </animated.p>
+
+        <animated.h2 style={teamMembersProps} className="text-4xl font-extrabold mb-4 mt-8">
+          Team Members
+        </animated.h2>
+        <animated.p style={teamMembersProps} className="text-lg font-bold mb-8">
+          Meet the talented individuals behind the scenes, dedicated to bringing you the best dining experience.
+        </animated.p>
+
+        <animated.div style={photosProps} className="flex justify-center mt-8">
+          <img className="rounded-full h-24 w-24 mx-4" src="https://avatars.githubusercontent.com/u/142443611?v=4" alt="Adiba" />
+          <img className="rounded-full h-24 w-24 mx-4" src="https://avatars.githubusercontent.com/u/103099845?v=4" alt="Kartik" />
+          <img className="rounded-full h-24 w-24 mx-4" src="https://media.licdn.com/dms/image/D4D03AQEoow1fGhm5kg/profile-displayphoto-shrink_400_400/0/1692962630747?e=1704931200&v=beta&t=ye_8IJ_NlT36BHXWNJBLVoSGNeKC2M0PtwGPOPz_j7M" alt="Vaibhav" />
+          <img className="rounded-full h-24 w-24 mx-4" src="https://media.licdn.com/dms/image/C4D03AQEgPY8_X_MH_Q/profile-displayphoto-shrink_100_100/0/1661403615464?e=1704931200&v=beta&t=jpPJE24Az8UVi4BgRfk7cbqXdXzpglaL9QETxLMl3hY" alt="Parth" />
+          <img className="rounded-full h-24 w-24 mx-4" src="https://media.licdn.com/dms/image/D4E03AQF9fN_HmZsAWA/profile-displayphoto-shrink_100_100/0/1688908404129?e=1704931200&v=beta&t=j_w8n4KVmLpp_iMC4kg-B9ifVCs_qyhH_LzIt14duy8" alt="Upmanyu" />
+        </animated.div>
       </div>
     </div>
   );
 }
+
 export default About;

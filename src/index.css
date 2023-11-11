@@ -61,10 +61,22 @@
   min-height: 50rem;
 }
 
+
 .reservenowbtn:hover{
 
   border-color: aqua;
   color: aqua;
   transform: scale(1.05);
   transition: all 0.2s ease-in-out;
+}
+
+.centered {
+  transform: translateY(50%);
+  transition: transform 0.5s ease-in-out;
+}
+
+.show-history {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
