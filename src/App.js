@@ -6,7 +6,6 @@ import Nav from './Components/Nav/Nav';
 import Footer from './Components/Footer/Footer';
 import Hero from './Components/Hero/Hero';
 import Reserve from './Components/Reserve/Reserve';
-// import Login from './Components/Login/Login';
 import Booking from './Components/Booking/Booking';
 import Signup from './Components/Signup/Signup';
 
