@@ -48,7 +48,7 @@ function Login(props) {
         src="https://images.unsplash.com/photo-1516953951091-5051d8bebb74?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         alt=""
       />
-      <div className="w-full glassmorphism rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 ">
+      <div className="w-full glassmorphism rounded-lg md:mt-0 sm:max-w-md xl:p-0 ">
         <div className="flex flex-col p-6 sm:p-8">
           <h1 className="text-3xl font-bold mx-auto leading-tight tracking-tight md:text-2x text-white">
             Create Account
@@ -57,7 +57,7 @@ function Login(props) {
             <div>
               <label
                 htmlFor="email"
-                className="block mb-2 text-md font-medium text-white"
+                className="block mb-2 text-md font-medium text-white "
               >
                 Your email
               </label>

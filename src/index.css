@@ -25,6 +25,13 @@
   -ms-filter: brightness(0.5);
   filter: brightness(0.5);
 }
+.lowbrightness2 {
+  -webkit-filter: brightness(0.3);
+  -moz-filter: brightness(0.3);
+  -o-filter: brightness(0.3);
+  -ms-filter: brightness(0.3);
+  filter: brightness(0.3);
+}
 
 @font-face {
   font-family: "Dancing";
@@ -94,10 +101,64 @@
 }
 
 .forminput {
+  outline: none !important;
   background-color: transparent;
   color: aqua;
+  transition: all 0.2s ease-in-out;
 }
 
 .forminput:focus {
   border-color: aqua;
+  scale: 1.05;
+}
+
+.item-enhance {
+  border-color: aqua;
+}
+
+.card-effect {
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0px 0px 50px 0px rgba(255, 255, 255, 0.15);
+}
+
+.card-effect:hover {
+  transform: scale(1.07);
+  z-index: 2;
+  box-shadow: 0px 0px 50px 0px rgba(255, 255, 255, 0.3);
+}
+
+.star-position {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.customDatePickerWidth,
+.customDatePickerWidth > div.react-datepicker-wrapper,
+.customDatePickerWidth
+  > div
+  > div.react-datepicker__input-container
+  .customDatePickerWidth
+  > div
+  > div.react-datepicker__input-container
+  input {
+  width: 100%;
+}
+
+.disable-time-arrow {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: "";
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }

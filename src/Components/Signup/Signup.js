@@ -1,6 +1,6 @@
 import Login from "../Login/Login";
 import { useState } from "react";
-import Axios from "axios";
+import axios from "axios";
 
 function Signup() {
   const [arr, setArr] = useState([]);
@@ -12,7 +12,8 @@ function Signup() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = { email: arr[0], password: arr[1] };
-    Axios.post("http://localhost:4000/people/create-people", data)
+    axios
+      .post("http://localhost:4000/people/create-people", data)
       .then((res) => {
         if (res.status === 200) {
           alert("Record added successfully");
