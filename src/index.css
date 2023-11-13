@@ -18,6 +18,14 @@
   filter: brightness(0.5);
 }
 
+.lowbrightness {
+  -webkit-filter: brightness(0.5);
+  -moz-filter: brightness(0.5);
+  -o-filter: brightness(0.5);
+  -ms-filter: brightness(0.5);
+  filter: brightness(0.5);
+}
+
 @font-face {
   font-family: "Dancing";
   src: url("../../MERN-Team-Project/src/Fonts/DancingScript-VariableFont_wght.ttf")
@@ -47,7 +55,7 @@
 .reservebtn {
   border: 1px solid #fff;
   padding: 2px 80px;
-  transition: background-color 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .reservebtn:hover {
@@ -61,9 +69,13 @@
   min-height: 50rem;
 }
 
+.reservenowbtn {
+  border: 1px solid #fff;
+  padding: 2px 80px;
+  transition: all 0.3s ease-in-out;
+}
 
-.reservenowbtn:hover{
-
+.reservenowbtn:hover {
   border-color: aqua;
   color: aqua;
   transform: scale(1.05);

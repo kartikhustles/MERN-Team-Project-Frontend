@@ -33,15 +33,14 @@ function Hero() {
             Skip the line and reserve a table with us.
           </p>
 
-          <button className="mx-auto text-xl reservebtn rounded-lg font-semibold px-5 py-2 m-2">
-            <Link
-              to="/signup"
-              className="block py-2 pl-3 pr-4 font-semibold text-xl rounded md:bg-transparent"
-              style={{ ...customFontStyle2, lineHeight: "1.5" }}
+          <Link to="/signup">
+            <button
+              className="block pl-3 pr-4 font-semibold text-xl md:bg-transparent mx-auto reservebtn rounded-lg px-5 py-2 m-2"
+              style={{ ...customFontStyle2, lineHeight: "2" }}
             >
               Reserve Table
-            </Link>
-          </button>
+            </button>
+          </Link>
         </div>
       </div>
     </>
