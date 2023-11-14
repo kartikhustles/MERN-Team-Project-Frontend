@@ -35,7 +35,7 @@ function Hero() {
 
           <Link to="/signup">
             <button
-              className="block pl-3 pr-4 font-semibold text-xl md:bg-transparent mx-auto reservebtn rounded-lg px-5 py-2 m-2"
+              className="block pl-3 pr-4 font-semibold text-xl md:bg-transparent mx-auto reservebtn rounded-lg px-5 py-2 my-6"
               style={{ ...customFontStyle2, lineHeight: "2" }}
             >
               Reserve Table

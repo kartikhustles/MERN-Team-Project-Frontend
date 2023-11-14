@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useSpring, animated } from "react-spring";
 
 function About() {
+  const customFontStyle2 = {
+    fontFamily: "Garet-Book, sans-serif",
+    fontSize: "1.5rem",
+  };
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -46,7 +51,7 @@ function About() {
         src="https://images.unsplash.com/photo-1449038319053-cc4a78b12733?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fGRpbmV8ZW58MHx8MHx8fDA%3D"
         alt=""
       /> */}
-      <div className="absolute z-1 text-white m+20 heromid text-center mt-4">
+      <div className="absolute z-1 text-white heromid text-center mt-16">
         <h1 className="text-4xl font-extrabold text-center mb-8 mt-56">
           Welcome to Dine
         </h1>
@@ -109,6 +114,16 @@ function About() {
             src="https://media.licdn.com/dms/image/D4E03AQF9fN_HmZsAWA/profile-displayphoto-shrink_100_100/0/1688908404129?e=1704931200&v=beta&t=j_w8n4KVmLpp_iMC4kg-B9ifVCs_qyhH_LzIt14duy8"
             alt="Upmanyu"
           />
+        </animated.div>
+        <animated.div style={photosProps}>
+          <Link to="/signup">
+            <button
+              className="block pl-3 pr-4 font-semibold text-xl md:bg-transparent mx-auto reservebtn rounded-lg px-5 py-2 my-6"
+              style={{ ...customFontStyle2, lineHeight: "2" }}
+            >
+              Reserve Table
+            </button>
+          </Link>
         </animated.div>
       </div>
     </div>

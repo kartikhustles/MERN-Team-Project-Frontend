@@ -46,7 +46,7 @@ function Contact() {
             Want to Get in Touch?
           </h1>
           <form className="mt-6 flex flex-col" onSubmit={submitHandler}>
-            <div className="my-4">
+            <div className="mb-4">
               <label
                 htmlFor="username"
                 className="block mb-2 text-md font-medium text-white "
