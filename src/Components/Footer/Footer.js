@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 function Footer() {
   return (
     // <footer className="bg-white w-full shadow  dark:bg-gray-800 flex justify-end">
