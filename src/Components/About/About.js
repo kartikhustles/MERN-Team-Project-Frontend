@@ -38,9 +38,14 @@ function About() {
     <div className="flex items-center justify-center min-h-screen">
       <img
         className="h-full lowbrightness w-full object-cover z-[-1] fixed top-0"
-        src="https://images.unsplash.com/photo-1449038319053-cc4a78b12733?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fGRpbmV8ZW58MHx8MHx8fDA%3D"
+        src="https://images.unsplash.com/photo-1579027989536-b7b1f875659b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         alt=""
       />
+      {/* <img
+        className="h-full lowbrightness w-full object-cover z-[-1] fixed top-0"
+        src="https://images.unsplash.com/photo-1449038319053-cc4a78b12733?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fGRpbmV8ZW58MHx8MHx8fDA%3D"
+        alt=""
+      /> */}
       <div className="absolute z-1 text-white m+20 heromid text-center mt-4">
         <h1 className="text-4xl font-extrabold text-center mb-8 mt-56">
           Welcome to Dine
