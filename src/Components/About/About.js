@@ -51,8 +51,8 @@ function About() {
         src="https://images.unsplash.com/photo-1449038319053-cc4a78b12733?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fGRpbmV8ZW58MHx8MHx8fDA%3D"
         alt=""
       /> */}
-      <div className="absolute z-1 text-white heromid text-center mt-16">
-        <h1 className="text-4xl font-extrabold text-center mb-8 mt-56">
+      <div className="text-white text-center w-5/6">
+        <h1 className="text-4xl font-extrabold text-center mb-8">
           Welcome to Dine
         </h1>
 
@@ -118,7 +118,7 @@ function About() {
         <animated.div style={photosProps}>
           <Link to="/signup">
             <button
-              className="block pl-3 pr-4 font-semibold text-xl md:bg-transparent mx-auto reservebtn rounded-lg px-5 py-2 my-6"
+              className="block pl-3 pr-4 font-semibold text-xl md:bg-transparent mx-auto reservebtn rounded-lg px-5 py-2 mt-6"
               style={{ ...customFontStyle2, lineHeight: "2" }}
             >
               Reserve Table

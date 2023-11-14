@@ -79,7 +79,7 @@ function Booking() {
               <input
                 type="number"
                 name="num-people"
-                placeholder="69"
+                placeholder="04"
                 required
                 // className="bg-gray-700 py-2 px-24 rounded-2xl text-white"
                 className="disable-time-arrow border text-base font-semibold rounded-lg block w-full p-2.5 forminput"

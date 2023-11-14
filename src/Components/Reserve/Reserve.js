@@ -10,7 +10,7 @@ function Reserve() {
         alt=""
       />
 
-      <h1 className="text-5xl text-center my-4 text-slate-100">
+      <h1 className="text-5xl font-bold text-center my-6 text-slate-100">
         Select Your Delight!
       </h1>
 
