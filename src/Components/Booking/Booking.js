@@ -1,51 +1,28 @@
 import React, { useState, useEffect } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import loadingGif from '../../logo/loading.gif'; 
+import loadingGif from "../../logo/loading.gif";
 
 function Booking() {
   const [selectedDate, setSelectedDate] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
 
   const handleDateChange = (date) => {
     setSelectedDate(date);
   };
 
-  
-  useEffect(() => {
-    setIsLoading(true);
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 2000); 
-  }, []);
-
   return (
-    <div className="hero relative p-4 flex flex-col justify-center items-center">
-      
+    <div className="hero p-4 flex flex-col justify-center items-center">
       <img
-        className="absolute h-full w-full object-cover z-[-1] top-0"
+        className="h-full w-full object-cover z-[-1] fixed top-0"
         src="https://images.unsplash.com/photo-1481833761820-0509d3217039?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fHJlc3RhdXJhbnR8ZW58MHwwfDB8fHww"
         alt=""
       />
-      
-      {isLoading ? (
-  <img
-    src={loadingGif}
-    alt="Loading..."
-    style={{
-      width: "350px",
-      height: "190px",
-      filter: "brightness(100%)" 
-    }}
-  />
-) : (
-  
-  <div className="w-full glassmorphism rounded-lg shadow dark:border sm:max-w-md xl:p-0 -mt-20 mx-auto">
-          <div className="p-6 flex flex-col space-y-4 md:space-y-6 sm:p-8">
-            <h1 className="text-3xl font-bold mx-auto leading-tight md:text-2x tracking-tight md:text-2x text-white">
-              Book a Table
-            </h1>
-            <form className="w-full">
+      <div className="w-full glassmorphism rounded-lg shadow dark:border sm:max-w-md xl:p-0 -mt-20 mx-auto">
+        <div className="p-6 flex flex-col space-y-4 md:space-y-6 sm:p-8">
+          <h1 className="text-3xl font-bold mx-auto leading-tight md:text-2x tracking-tight md:text-2x text-white">
+            Book a Table
+          </h1>
+          <form className="w-full">
             <div className="flex flex-col">
               <label
                 htmlFor="date"
@@ -103,7 +80,7 @@ function Booking() {
               <input
                 type="number"
                 name="num-people"
-                placeholder="69"
+                placeholder="04"
                 required
                 // className="bg-gray-700 py-2 px-24 rounded-2xl text-white"
                 className="disable-time-arrow border text-base font-semibold rounded-lg block w-full p-2.5 forminput"
@@ -117,10 +94,9 @@ function Booking() {
                 </button>
               </div>
             </div>
-            </form>
-          </div>
+          </form>
         </div>
-      )}
+      </div>
     </div>
   );
 }
