@@ -1,9 +1,7 @@
-
 import { useState } from "react";
 import axios from "axios";
 
-function Signup() {
-  
+function Signup({ isLoggedIn, setIsLoggedIn }) {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -20,12 +18,14 @@ function Signup() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const data = {email:formData.email, password:formData.password} ;
+    setIsLoggedIn(true);
+    const data = { email: formData.email, password: formData.password };
     axios
       .post("http://localhost:4000/people/create-people", data)
       .then((res) => {
         if (res.status === 200) {
           alert("Record added successfully");
+          // setIsLoggedIn(true);
         } else {
           Promise.reject();
         }
