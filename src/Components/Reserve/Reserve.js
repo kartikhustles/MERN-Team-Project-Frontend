@@ -11,12 +11,12 @@ function Reserve({ isLoggedIn }) {
         src="https://images.unsplash.com/photo-1504981983529-9ed8031ade7f?q=80&w=2303&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         alt=""
       />
-      <h1 className="text-5xl font-bold text-center my-6 text-slate-100">
+      <h1 className="text-3xl md:text-5xl font-bold text-center my-6 text-slate-100">
         Select Your Delight!
       </h1>
       {!isLoggedIn && (
         <div className="mx-auto flex flex-col">
-          <img src={loadingGif} alt="Logo" className="h-80" />
+          <img src={loadingGif} alt="Logo" className="h-40 md:h-80" />
           <h1 className="mx-auto text-white font-bold text-2xl">
             Haven't Logged In?
           </h1>

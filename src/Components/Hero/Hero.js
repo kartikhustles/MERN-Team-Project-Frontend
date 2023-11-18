@@ -18,16 +18,16 @@ function Hero() {
           src="https://images.unsplash.com/photo-1543007631-283050bb3e8c?auto=format&fit=crop&q=80&w=3174&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt=""
         />
-        <div className="flex glassmorphism heromid absolute z-1 w-[50%] flex-col rounded-xl align-center text-slate-100">
+        <div className="flex glassmorphism heromid absolute z-1 w-[90%] md:w-[50%] flex-col rounded-xl align-center text-slate-100">
           <h3
-            className="text-5xl font-bold pt-5 text-center"
+            className="text-2xl md:text-5xl md:font-bold pt-5 text-center"
             style={{ ...customFontStyle, lineHeight: "1.5" }}
           >
             Let us Serve you better
           </h3>
 
           <p
-            className="text-lg font-semibold py-2 text-center"
+            className="text-md md:text-lg font-semibold py-2 text-center"
             style={{ ...customFontStyle2, lineHeight: "1.5" }}
           >
             Skip the line and reserve a table with us.
@@ -35,7 +35,7 @@ function Hero() {
 
           <Link to="/signup">
             <button
-              className="block pl-3 pr-4 font-semibold text-xl md:bg-transparent mx-auto reservebtn rounded-lg px-5 py-2 my-6"
+              className="block pl-3 pr-4 px-2 font-semibold text-xl md:bg-transparent mx-auto reservebtn rounded-lg md:px-5 py-2 my-6"
               style={{ ...customFontStyle2, lineHeight: "2" }}
             >
               Reserve Table

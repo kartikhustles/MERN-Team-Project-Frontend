@@ -113,7 +113,7 @@ function Signup({ isLoggedIn, setIsLoggedIn }) {
             <button
               // onClick={handleClick}
               type="submit"
-              className="reservebtn text-lg text-white font-medium rounded-lg px-5 py-2.5 mt-6 ml-12"
+              className="reservebtn text-lg ml-0 mr-0 text-white font-medium rounded-lg px-5 py-2.5 mt-6 md:ml-12"
             >
               Create Account
             </button>
