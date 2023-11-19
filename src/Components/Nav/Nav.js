@@ -4,12 +4,12 @@ import "../../App.css";
 
 function Nav() {
   return (
-    <nav className="mx-14 border-b-2 bg-transparent text-slate-100 border-gray-300 dark:bg-transparent">
+    <nav className="mx-5 md:mx-14 border-b-2 bg-transparent text-slate-100 border-gray-300 dark:bg-transparent">
       <div className="flex flex-wrap items-center justify-between p-2">
         <Link to="/" className="font-bold text-4xl">
-          <img src={logoGif} alt="Logo" className="h-20 w-35" />
+          <img src={logoGif} alt="Logo" className="h-14 w-20 md:h-20 md:w-35" />
         </Link>
-        <div className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-transparent dark:bg-transparent dark:border-gray-700">
+        <div className="text-xs flex flex-row p-0 md:p-0 mt-2 border border-gray-100 rounded-lg bg-gray-50 md:font-medium md:text-lg md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-transparent dark:bg-transparent dark:border-gray-700">
           <Link
             to="/"
             className="block py-2 px-3 font-semibold text-md rounded md:bg-transparent"

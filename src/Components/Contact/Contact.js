@@ -22,7 +22,7 @@ function Contact() {
     event.preventDefault();
     console.log("printing the form values");
     console.log(formData);
-    toast.success("Logged-in Successfully!", {
+    toast.success("Thanks for Contacting!", {
       position: "top-right",
       autoClose: 5000,
       hideProgressBar: false,
@@ -42,14 +42,14 @@ function Contact() {
       />
       <div className="w-full glassmorphism rounded-lg md:mt-0 sm:max-w-md xl:p-0 ">
         <div className="flex flex-col p-6 sm:p-8">
-          <h1 className="text-3xl font-bold mx-auto leading-tight tracking-tight md:text-2x text-white">
+          <h1 className="text-xl md:text-3xl font-bold mx-auto leading-tight tracking-tight md:text-2x text-white">
             Want to Get in Touch?
           </h1>
           <form className="mt-6 flex flex-col" onSubmit={submitHandler}>
             <div className="mb-4">
               <label
                 htmlFor="username"
-                className="block mb-2 text-md font-medium text-white "
+                className="block mb-2 text-sm md:text-md font-medium text-white "
               >
                 Your name
               </label>
@@ -61,7 +61,7 @@ function Contact() {
                 id="username"
                 value={formData.username}
                 // className="border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                className="border text-base font-semibold rounded-lg block w-full p-2.5 forminput"
+                className="border text-base font-semibold rounded-lg block w-full p-1.5 md:p-2.5 forminput"
                 placeholder="John Cena"
                 required
                 onChange={ChangeHandler}
@@ -70,7 +70,7 @@ function Contact() {
             <div>
               <label
                 htmlFor="email"
-                className="block mb-2 text-md font-medium text-white "
+                className="block mb-2 text-sm md:text-md font-medium text-white "
               >
                 Your email
               </label>
@@ -82,7 +82,7 @@ function Contact() {
                 id="email"
                 value={formData.email}
                 // className="border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                className="border text-base font-semibold rounded-lg block w-full p-2.5 forminput"
+                className="border text-base font-semibold rounded-lg block w-full p-1.5 md:p-2.5 forminput"
                 placeholder="name@mail.com"
                 required
                 onChange={ChangeHandler}
