@@ -43,12 +43,12 @@ function Nav() {
           >
             Restaurants
           </Link>
-          <Link
+          {/* <Link
             to="/booking"
             className="block py-2 px-3 font-semibold text-md rounded bg-transparent md:bg-transparent"
           >
             Booking
-          </Link>
+          </Link> */}
           <Link
             to="/contact"
             className="block py-2 px-3 font-semibold text-md rounded bg-transparent md:bg-transparent"
