@@ -117,10 +117,7 @@ function About() {
         </animated.div>
         <animated.div style={photosProps}>
           <Link to="/signup">
-            <button
-              className="block pl-3 pr-4 font-semibold text-xl md:bg-transparent mx-auto reservebtn rounded-lg px-5 py-2 mt-6"
-              style={{ ...customFontStyle2, lineHeight: "2" }}
-            >
+            <button className="lg:px-10 lg:py-2 font-semibold text-2xl md:bg-transparent mx-auto reservebtn rounded-lg md:px-5 my-6">
               Reserve Table
             </button>
           </Link>
