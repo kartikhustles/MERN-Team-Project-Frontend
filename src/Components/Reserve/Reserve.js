@@ -11,7 +11,7 @@ function Reserve({ isLoggedIn }) {
         src="https://images.unsplash.com/photo-1504981983529-9ed8031ade7f?q=80&w=2303&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         alt=""
       />
-      <h1 className="text-3xl md:text-5xl font-bold text-center my-6 text-slate-100">
+      <h1 className="text-3xl md:text-5xl font-bold text-center my-20 md:my-6 text-slate-100">
         Select Your Delight!
       </h1>
       {!isLoggedIn && (
@@ -21,7 +21,7 @@ function Reserve({ isLoggedIn }) {
             Haven't Logged In?
           </h1>
           <Link to="/Signup" className="mx-auto">
-            <button className="reservebtn text-lg text-white font-medium rounded-lg px-5 py-2.5 mt-4 mb-8">
+            <button className="reservebtn text-lg text-white font-medium rounded-lg px-5 py-2.5 mt-10 md:mt-4 mb-20 md:mb-8">
               Log In
             </button>
           </Link>
