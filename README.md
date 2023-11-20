@@ -1,3 +1,5 @@
+https://github.com/AdibaFaiyaz/MERN-Team-Project/assets/142443611/fd58bf3b-d3b5-4823-a945-d9b6f827c5f4
+
 # Restaurant Reservation System
 
 This project is designed to help users reserve a table at their preferred restaurant effortlessly. Whether it's for a special occasion or a casual dinner, this application makes the reservation process seamless. The reservation system is designed to provide a user-friendly experience while ensuring the restaurant's efficient operation.
@@ -16,8 +18,3 @@ This project is designed to help users reserve a table at their preferred restau
 5. **Reservation Confirmation**: Users receive a confirmation email and a booking reference after successfully making a reservation.
 
 6. **Profile Management**: Users can update their profile information, view their reservation history, and cancel existing reservations.
-
-
-https://github.com/AdibaFaiyaz/MERN-Team-Project/assets/142443611/fd58bf3b-d3b5-4823-a945-d9b6f827c5f4
-
-
