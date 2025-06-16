@@ -8,8 +8,11 @@ import Hero from "./Components/Hero/Hero";
 import Reserve from "./Components/Reserve/Reserve";
 import Booking from "./Components/Booking/Booking";
 import Signup from "./Components/Signup/Signup";
+import Login from "./Components/Login/Login";
 import PrivateRoute from "./Components/PrivateRoute";
 import { useState } from "react";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -25,11 +28,16 @@ function App() {
           <Route
             path="/reserve"
             element={<Reserve isLoggedIn={isLoggedIn} />}
-          />
-          <Route
+          />          <Route
             path="/signup"
             element={
-              <Signup isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+              <Signup setIsLoggedIn={setIsLoggedIn} />
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <Login setIsLoggedIn={setIsLoggedIn} />
             }
           />
           <Route
@@ -39,9 +47,9 @@ function App() {
                 <Booking />
               </PrivateRoute>
             }
-          />
-        </Routes>
+          />        </Routes>
         <Footer />
+        <ToastContainer />
       </HashRouter>
     </div>
   );

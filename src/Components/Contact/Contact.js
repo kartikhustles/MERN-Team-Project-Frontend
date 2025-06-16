@@ -129,12 +129,10 @@ function Contact() {
                 I accept the Terms and Conditions
               </label>
             </div>
-          </div> */}
-
-            <button
+          </div> */}            <button
               // onClick={handleClick}
               type="submit"
-              className="reservebtn text-lg text-white font-medium rounded-lg px-5 py-2.5 mt-6 mx-auto"
+              className="auth-btn text-lg text-white font-medium rounded-lg mt-6 mx-auto block"
             >
               Contact Us
             </button>

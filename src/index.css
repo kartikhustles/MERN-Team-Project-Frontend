@@ -91,14 +91,53 @@
 
 .forminput {
   outline: none !important;
-  background-color: transparent;
-  color: aqua;
-  transition: all 0.2s ease-in-out;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  color: white !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  border-radius: 0.5rem !important;
+  padding: 0.625rem !important;
+  width: 100% !important;
+  display: block !important;
+  transition: all 0.2s ease-in-out !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  backdrop-filter: blur(10px) !important;
+  box-shadow: none !important;
+}
+
+.forminput::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important;
 }
 
 .forminput:focus {
-  border-color: aqua;
-  scale: 1.05;
+  border-color: rgba(255, 255, 255, 0.6) !important;
+  transform: scale(1.02) !important;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1) !important;
+}
+
+.forminput:disabled {
+  opacity: 0.5 !important;
+  cursor: not-allowed !important;
+}
+
+/* Override any potential conflicting styles */
+.forminput,
+.forminput:hover,
+.forminput:active,
+.forminput:focus,
+.forminput:visited,
+.forminput:-webkit-autofill,
+.forminput:-webkit-autofill:hover,
+.forminput:-webkit-autofill:focus,
+.forminput:-webkit-autofill:active {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+  box-shadow: 0 0 0px 1000px transparent inset !important;
+  -webkit-text-fill-color: white !important;
 }
 
 .item-enhance {
@@ -137,6 +176,7 @@
 .disable-time-arrow {
   -webkit-appearance: none;
   -moz-appearance: none;
+  appearance: none;
   text-indent: 1px;
   text-overflow: "";
 }
@@ -144,10 +184,222 @@
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
+  appearance: none;
   margin: 0;
 }
 
 /* Firefox */
 input[type="number"] {
   -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/* Separate button styles for different sections */
+
+/* Original transparent button style for login/signup/contact */
+.auth-btn {
+  background: transparent !important;
+  border: 1px solid #fff !important;
+  padding: 12px 32px !important;
+  transition: all 0.3s ease-in-out !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+
+.auth-btn:hover {
+  border-color: aqua !important;
+  color: aqua !important;
+  transform: scale(1.05) !important;
+  transition: all 0.2s ease-in-out !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.auth-btn:focus {
+  background: transparent !important;
+  border-color: aqua !important;
+  box-shadow: 0 0 0 3px rgba(0, 255, 255, 0.2) !important;
+  outline: none !important;
+}
+
+.auth-btn:disabled {
+  opacity: 0.5 !important;
+  cursor: not-allowed !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  color: rgba(255, 255, 255, 0.5) !important;
+  background: transparent !important;
+}
+
+.auth-btn:disabled:hover {
+  transform: none !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  color: rgba(255, 255, 255, 0.5) !important;
+  background: transparent !important;
+}
+
+/* Override any conflicting button styles */
+button.auth-btn {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: 1px solid #fff !important;
+  box-shadow: none !important;
+}
+
+button.auth-btn:hover {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border-color: aqua !important;
+  color: aqua !important;
+}
+
+button.auth-btn:focus {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+button.auth-btn:active {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* Keep the enhanced booking button separate */
+.booking-btn {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8) !important;
+  border: none !important;
+  color: #fff !important;
+  transition: all 0.3s ease-in-out !important;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3) !important;
+  padding: 12px 32px !important;
+}
+
+.booking-btn:hover {
+  background: linear-gradient(135deg, #2563eb, #1e40af) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4) !important;
+}
+
+.booking-btn:disabled {
+  opacity: 0.5 !important;
+  cursor: not-allowed !important;
+  background: rgba(59, 130, 246, 0.5) !important;
+}
+
+.booking-btn:disabled:hover {
+  transform: none !important;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3) !important;
+}
+
+button.booking-btn {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8) !important;
+  background-color: #3b82f6 !important;
+  border: none !important;
+}
+
+/* Select dropdown styling */
+select.forminput {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 0.7rem center !important;
+  background-size: 1em !important;
+  padding-right: 2.5rem !important;
+}
+
+/* Textarea styling */
+textarea.forminput {
+  resize: vertical !important;
+  min-height: 100px !important;
+}
+
+/* Override any Tailwind or other conflicting styles */
+.forminput,
+.forminput:hover,
+.forminput:active,
+.forminput:visited {
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
+/* React DatePicker styling for transparency */
+.react-datepicker__input-container input.forminput {
+  color: white !important;
+  background-color: transparent !important;
+}
+
+/* DatePicker calendar styling */
+.custom-calendar {
+  background-color: rgba(0, 0, 0, 0.9) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  border-radius: 0.5rem !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.custom-calendar .react-datepicker__header {
+  background-color: transparent !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+.custom-calendar .react-datepicker__current-month,
+.custom-calendar .react-datepicker__day-name {
+  color: white !important;
+}
+
+.custom-calendar .react-datepicker__day {
+  color: white !important;
+}
+
+.custom-calendar .react-datepicker__day:hover {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.custom-calendar .react-datepicker__day--selected {
+  background-color: rgba(255, 255, 255, 0.3) !important;
+  color: white !important;
+}
+
+/* Comprehensive input overrides to ensure transparency */
+input.forminput,
+select.forminput,
+textarea.forminput {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  background-clip: padding-box !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+}
+
+/* Override Tailwind and other framework defaults */
+input.forminput,
+select.forminput,
+textarea.forminput {
+  --tw-bg-opacity: 0 !important;
+  --bg-opacity: 0 !important;
+}
+
+/* Force transparency on all browsers */
+@keyframes autofill {
+  to {
+    color: white !important;
+    background: transparent !important;
+  }
+}
+
+@-webkit-keyframes autofill {
+  to {
+    color: white !important;
+    background: transparent !important;
+  }
+}
+
+input.forminput:-webkit-autofill {
+  -webkit-animation-name: autofill !important;
+  -webkit-animation-fill-mode: both !important;
 }

@@ -1,11 +1,15 @@
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import axios from "axios";
 
-function Signup({ isLoggedIn, setIsLoggedIn }) {
+function Signup({ setIsLoggedIn }) {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
+  const [isLoading, setIsLoading] = useState(false);
 
   function ChangeHandler(event) {
     setFormData((prevFormData) => {
@@ -16,21 +20,41 @@ function Signup({ isLoggedIn, setIsLoggedIn }) {
     });
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    setIsLoggedIn(true);
-    const data = { email: formData.email, password: formData.password };
-    axios
-      .post("https://mongo-dep.onrender.com/people/create-people", data)
-      .then((res) => {
-        if (res.status === 200) {
-          alert("Record added successfully");
-          // setIsLoggedIn(true);
-        } else {
-          Promise.reject();
-        }
-      })
-      .catch((err) => alert(err));
+    setIsLoading(true);
+    
+    try {
+      const response = await axios.post("http://localhost:4000/people/create-people", formData);
+      
+      if (response.status === 200) {
+        setIsLoggedIn(true);
+        toast.success("Account created successfully!", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
+        navigate("/reserve");
+      }
+    } catch (error) {
+      toast.error(error.response?.data?.error || "Failed to create account. Please try again.", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -108,18 +132,20 @@ function Signup({ isLoggedIn, setIsLoggedIn }) {
                   I accept the Terms and Conditions
                 </label>
               </div>
-            </div> */}
-
-            <button
-              // onClick={handleClick}
+            </div> */}            <button
               type="submit"
-              className="reservebtn text-lg ml-0 mr-0 text-white font-medium rounded-lg px-5 py-2.5 mt-6 md:ml-12"
+              disabled={isLoading}
+              className="auth-btn text-lg text-white font-medium rounded-lg mt-6 mx-auto block"
             >
-              Create Account
+              {isLoading ? "Creating Account..." : "Create Account"}
             </button>
-            {/* <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                      Already have an account? <a href="#" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Login here</a>
-                  </p> */}
+            
+            <p className="text-sm font-light text-gray-300 mt-4 text-center">
+              Already have an account? 
+              <Link to="/login" className="font-medium text-blue-400 hover:underline ml-1">
+                Login here
+              </Link>
+            </p>
           </form>
         </div>
       </div>
