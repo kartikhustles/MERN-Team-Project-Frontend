@@ -2,6 +2,7 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { API_ENDPOINTS } from "../../config/api";
 
 function Login({ setIsLoggedIn }) {
   const navigate = useNavigate();
@@ -22,10 +23,10 @@ function Login({ setIsLoggedIn }) {
 
   async function submitHandler(event) {
     event.preventDefault();
-    setIsLoading(true);
-    
-    try {
-      const response = await axios.post("http://localhost:4000/people/login", formData);
+    setIsLoading(true);    try {
+      const response = await axios.post(API_ENDPOINTS.LOGIN, formData, {
+        timeout: 30000 // 30 second timeout for Render free tier
+      });
       
       if (response.data.success) {
         setIsLoggedIn(true);

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "axios";
+import { API_ENDPOINTS } from "../../config/api";
 
 function Signup({ setIsLoggedIn }) {
   const navigate = useNavigate();
@@ -25,7 +26,9 @@ function Signup({ setIsLoggedIn }) {
     setIsLoading(true);
     
     try {
-      const response = await axios.post("http://localhost:4000/people/create-people", formData);
+      const response = await axios.post(API_ENDPOINTS.SIGNUP, formData, {
+        timeout: 30000 // 30 second timeout for Render free tier
+      });
       
       if (response.status === 200) {
         setIsLoggedIn(true);
