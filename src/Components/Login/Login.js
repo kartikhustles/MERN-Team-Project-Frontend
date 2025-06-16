@@ -1,20 +1,15 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
-function Login(props) {
-  // const [email, setEmail] = useState("");
-  // const [password, setPasswword] = useState("");
-
-  // const arr = [email, password];
-
-  // const handleClick = () => {
-  //   props.getState(arr);
-  // };
-
+function Login({ setIsLoggedIn }) {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
+  const [isLoading, setIsLoading] = useState(false);
 
   function ChangeHandler(event) {
     setFormData((prevFormData) => {
@@ -25,20 +20,41 @@ function Login(props) {
     });
   }
 
-  function submitHandler(event) {
+  async function submitHandler(event) {
     event.preventDefault();
-    console.log("printing the form values");
-    console.log(formData);
-    toast.success("Logged-in Successfully!", {
-      position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-    });
+    setIsLoading(true);
+    
+    try {
+      const response = await axios.post("http://localhost:4000/people/login", formData);
+      
+      if (response.data.success) {
+        setIsLoggedIn(true);
+        toast.success("Logged-in Successfully!", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
+        navigate("/reserve");
+      }
+    } catch (error) {
+      toast.error(error.response?.data?.message || "Login failed. Please try again.", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   }
 
   return (
@@ -48,10 +64,9 @@ function Login(props) {
         src="https://images.unsplash.com/photo-1516953951091-5051d8bebb74?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         alt=""
       />
-      <div className="w-full glassmorphism rounded-lg md:mt-0 sm:max-w-md xl:p-0 ">
-        <div className="flex flex-col p-6 sm:p-8">
+      <div className="w-full glassmorphism rounded-lg md:mt-0 sm:max-w-md xl:p-0 ">        <div className="flex flex-col p-6 sm:p-8">
           <h1 className="text-3xl font-bold mx-auto leading-tight tracking-tight md:text-2x text-white">
-            Create Account
+            Login
           </h1>
           <form className="mt-6" onSubmit={submitHandler}>
             <div>
@@ -116,18 +131,20 @@ function Login(props) {
                   I accept the Terms and Conditions
                 </label>
               </div>
-            </div> */}
-
-            <button
-              // onClick={handleClick}
+            </div> */}            <button
               type="submit"
-              className="reservebtn text-lg text-white font-medium rounded-lg px-5 py-2.5 mt-6 ml-12"
+              disabled={isLoading}
+              className="auth-btn text-lg text-white font-medium rounded-lg mt-6 mx-auto block"
             >
-              Create Account
+              {isLoading ? "Logging in..." : "Login"}
             </button>
-            {/* <p className="text-sm font-light text-gray-500 dark:text-gray-400">
-                      Already have an account? <a href="#" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Login here</a>
-                  </p> */}
+            
+            <p className="text-sm font-light text-gray-300 mt-4 text-center">
+              Don't have an account? 
+              <Link to="/signup" className="font-medium text-blue-400 hover:underline ml-1">
+                Create Account
+              </Link>
+            </p>
           </form>
         </div>
       </div>

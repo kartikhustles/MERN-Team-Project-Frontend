@@ -13,15 +13,13 @@ function Reserve({ isLoggedIn }) {
       />
       <h1 className="text-3xl md:text-5xl font-bold text-center my-20 md:my-6 text-slate-100">
         Select Your Delight!
-      </h1>
-      {!isLoggedIn && (
+      </h1>      {!isLoggedIn && (
         <div className="mx-auto flex flex-col">
           <img src={loadingGif} alt="Logo" className="h-40 md:h-80" />
           <h1 className="mx-auto text-white font-bold text-2xl">
             Haven't Logged In?
-          </h1>
-          <Link to="/Signup" className="mx-auto">
-            <button className="reservebtn text-lg text-white font-medium rounded-lg px-5 py-2.5 mt-10 md:mt-4 mb-20 md:mb-8">
+          </h1>          <Link to="/login" className="mx-auto">
+            <button className="auth-btn text-lg text-white font-medium rounded-lg m-10">
               Log In
             </button>
           </Link>

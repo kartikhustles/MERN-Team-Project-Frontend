@@ -30,9 +30,8 @@ function Nav() {
             className="block py-2 px-3 font-semibold text-md rounded md:bg-transparent"
           >
             About
-          </Link>
-          <Link
-            to="/Signup"
+          </Link>          <Link
+            to="/signup"
             className="block py-2 px-3 font-semibold text-md rounded bg-transparent md:bg-transparent"
           >
             Signup
