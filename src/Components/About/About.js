@@ -50,13 +50,12 @@ function About() {
         className="h-full lowbrightness w-full object-cover z-[-1] fixed top-0"
         src="https://images.unsplash.com/photo-1449038319053-cc4a78b12733?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fGRpbmV8ZW58MHx8MHx8fDA%3D"
         alt=""
-      /> */}
-      <div className="text-white text-center w-5/6">
-        <h1 className="text-4xl font-extrabold text-center mb-8">
+      /> */}      <div className="text-white text-center w-5/6">
+        <h1 className="restaurant-title text-4xl font-extrabold text-center mb-8">
           Welcome to Dine
         </h1>
 
-        <p className="text-lg font-bold mb-8">
+        <p className="menu-text text-lg font-bold mb-8">
           Your go-to destination for a seamless dining experience! Whether
           you're a food enthusiast looking to explore new culinary horizons or
           simply planning a special night out, we've got you covered. At Dine,
@@ -68,22 +67,22 @@ function About() {
 
         <animated.h2
           style={fadeProps}
-          className="text-4xl font-extrabold mb-4 mt-8"
+          className="restaurant-title text-4xl font-extrabold mb-4 mt-8"
         >
           History
         </animated.h2>
-        <animated.p style={fadeProps} className="text-lg font-bold mb-8">
+        <animated.p style={fadeProps} className="menu-text text-lg font-bold mb-8">
           Dine was founded in 2023 with a vision to revolutionize the way people
           experience dining...
         </animated.p>
 
         <animated.h2
           style={teamMembersProps}
-          className="text-4xl font-extrabold mb-4 mt-8"
+          className="restaurant-title text-4xl font-extrabold mb-4 mt-8"
         >
           Team Members
         </animated.h2>
-        <animated.p style={teamMembersProps} className="text-lg font-bold mb-8">
+        <animated.p style={teamMembersProps} className="menu-text text-lg font-bold mb-8">
           Meet the talented individuals behind the scenes, dedicated to bringing
           you the best dining experience.
         </animated.p>
