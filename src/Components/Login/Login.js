@@ -66,14 +66,14 @@ function Login({ setIsLoggedIn }) {
         alt=""
       />
       <div className="w-full glassmorphism rounded-lg md:mt-0 sm:max-w-md xl:p-0 ">        <div className="flex flex-col p-6 sm:p-8">
-          <h1 className="text-3xl font-bold mx-auto leading-tight tracking-tight md:text-2x text-white">
+          <h1 className="restaurant-title text-3xl font-bold mx-auto leading-tight tracking-tight md:text-2x text-white">
             Login
           </h1>
           <form className="mt-6" onSubmit={submitHandler}>
             <div>
               <label
                 htmlFor="email"
-                className="block mb-2 text-md font-medium text-white "
+                className="block mb-2 text-md font-medium text-white restaurant-subtitle"
               >
                 Your email
               </label>
@@ -92,10 +92,9 @@ function Login({ setIsLoggedIn }) {
               />
             </div>
 
-            <div className="mt-4">
-              <label
+            <div className="mt-4">              <label
                 htmlFor="password"
-                className="block mb-2 text-md font-medium text-white"
+                className="block mb-2 text-md font-medium text-white restaurant-subtitle"
               >
                 Password
               </label>

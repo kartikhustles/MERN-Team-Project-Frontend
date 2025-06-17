@@ -273,22 +273,20 @@ function Booking() {
       />
       <div className="p-4 flex lg:flex-row sm:flex-col justify-center items-center mt-28">
         <div className="w-full flex flex-col glassmorphism rounded-lg shadow dark:border sm:max-w-md xl:p-0 -mt-20 mx-auto">
-          <div className="p-6 flex flex-col space-y-4 md:space-y-6 sm:p-8">
-            <h1 className="text-3xl font-bold mx-auto leading-tight md:text-2x tracking-tight md:text-2x text-white">
-              Resturaunt Detail
+          <div className="p-6 flex flex-col space-y-4 md:space-y-6 sm:p-8">            <h1 className="restaurant-title text-3xl font-bold mx-auto leading-tight md:text-2x tracking-tight md:text-2x text-white">
+              Restaurant Detail
             </h1>
             <img
               className="h-[200px] w-[2000px] object-cover"
               src={image}
               alt="Sunset in the mountains"
-            />
-            <div className="text-white font-bold mx-auto text-4xl">
+            />            <div className="restaurant-title text-white font-bold mx-auto text-4xl">
               {Resname}
             </div>
-            <div className="text-white font-semibold mx-auto text-lg">
+            <div className="menu-text text-white font-semibold mx-auto text-lg">
               {description}
             </div>
-            <div className="text-white font-semibold mx-auto text-lg">
+            <div className="restaurant-subtitle text-white font-semibold mx-auto text-lg">
               {price}
             </div>
             <div className="flex justify-between">
@@ -313,20 +311,18 @@ function Booking() {
             </div>
           </div>
         </div>        <div className="w-full flex flex-col glassmorphism rounded-lg shadow dark:border sm:max-w-md xl:p-0 -mt-20 mx-auto">
-          <div className="p-6 flex flex-col space-y-4 md:space-y-6 sm:p-8">
-            <h1 className="text-3xl font-bold mx-auto leading-tight md:text-2x tracking-tight md:text-2x text-white">
+          <div className="p-6 flex flex-col space-y-4 md:space-y-6 sm:p-8">            <h1 className="restaurant-title text-3xl font-bold mx-auto leading-tight md:text-2x tracking-tight md:text-2x text-white">
               Book a Table
             </h1>
             <form className="w-full" onSubmit={handleSubmit}>
               
               {/* Customer Information */}
-              <div className="mb-4">
-                <label
+              <div className="mb-4">                <label
                   htmlFor="customerName"
-                  className="block mb-2 text-md font-medium text-white"
+                  className="block mb-2 text-md font-medium text-white restaurant-subtitle"
                 >
                   Full Name <span className="text-red-400">*</span>
-                </label>                <input
+                </label><input
                   type="text"
                   name="customerName"
                   value={formData.customerName}
@@ -338,15 +334,13 @@ function Booking() {
                 {errors.customerName && (
                   <p className="text-red-400 text-sm mt-1">{errors.customerName}</p>
                 )}
-              </div>
-
-              <div className="mb-4">
+              </div>              <div className="mb-4">
                 <label
                   htmlFor="customerEmail"
-                  className="block mb-2 text-md font-medium text-white"
+                  className="block mb-2 text-md font-medium text-white restaurant-subtitle"
                 >
                   Email Address <span className="text-red-400">*</span>
-                </label>                <input
+                </label><input
                   type="email"
                   name="customerEmail"
                   value={formData.customerEmail}
