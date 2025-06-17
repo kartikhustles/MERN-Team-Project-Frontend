@@ -4,6 +4,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "axios";
+import { API_ENDPOINTS } from "../../config/api";
 
 function Booking() {
   const location = useLocation();
@@ -40,14 +41,14 @@ function Booking() {
       checkAvailability(date);
     }
   };
-
   // Check availability for selected date and restaurant
   const checkAvailability = async (date) => {
     try {
       setIsCheckingAvailability(true);
       const dateString = date.toISOString().split('T')[0];
       const response = await axios.get(
-        `http://localhost:4000/bookings/availability/${encodeURIComponent(Resname)}/${dateString}`
+        API_ENDPOINTS.CHECK_AVAILABILITY(Resname, dateString),
+        { timeout: 30000 }
       );
       
       if (response.data.success) {
@@ -148,7 +149,9 @@ function Booking() {
       return;
     }
 
-    setIsLoading(true);    try {
+    setIsLoading(true);
+    
+    try {
       const bookingData = {
         restaurant: {
           name: Resname,
@@ -163,13 +166,13 @@ function Booking() {
           customerPhone: formData.customerPhone.replace(/\D/g, ''), // Remove non-digits
           customerEmail: formData.customerEmail.toLowerCase(),
           specialRequests: formData.specialRequests.trim(),
-          bookingId: `BK${Date.now()}${Math.random().toString(36).substr(2, 4).toUpperCase()}`, // Better booking ID
-          status: "confirmed"
-        }
-      };
+          bookingId: `BK${Date.now()}${Math.random().toString(36).substr(2, 4).toUpperCase()}`, // Better booking ID          status: "confirmed"
+        }      };
 
       // Make actual API call to backend
-      const response = await axios.post("http://localhost:4000/bookings/create", bookingData);
+      const response = await axios.post(API_ENDPOINTS.CREATE_BOOKING, bookingData, {
+        timeout: 30000 // 30 second timeout for Render free tier
+      });
       
       if (response.data.success) {
         toast.success(`Table booked successfully! Booking ID: ${bookingData.booking.bookingId}. Confirmation details sent to your email.`, {
